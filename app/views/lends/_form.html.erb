@@ -1,0 +1,37 @@
+<%= form_with(model: lend) do |form| %>
+  <% if lend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lend.errors.count, "error") %> prohibited this lend from being saved:</h2>
+
+      <ul>
+        <% lend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "名前" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "貸し出し中" %>
+    <%= form.number_field :loaned_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label "貸出日" %>
+    <%= form.date_select :loaned_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label "返却日" %>
+    <%= form.date_select :return_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録" %>
+  </div>
+<% end %>
