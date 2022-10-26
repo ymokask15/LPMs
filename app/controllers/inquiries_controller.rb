@@ -25,7 +25,7 @@ class InquiriesController < ApplicationController
 
     respond_to do |format|
       if @inquiry.save
-        format.html { redirect_to inquiry_url(@inquiry), notice: "Inquiry was successfully created." }
+        format.html { redirect_to inquiry_url(@inquiry), notice: "お問い合せが完了" }
         format.json { render :show, status: :created, location: @inquiry }
       else
         format.html { render :new, status: :unprocessable_entity }

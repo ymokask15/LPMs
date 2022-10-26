@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "名前" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :matter %>
+    <%= form.label "用件" %>
     <%= form.number_field :matter %>
   </div>
 
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label "詳細" %>
     <%= form.text_field :detail %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "登録" %>
   </div>
 <% end %>
