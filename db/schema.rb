@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_26_011901) do
+ActiveRecord::Schema.define(version: 2022_10_26_011917) do
 
   create_table "lost_items", force: :cascade do |t|
     t.string "item_name"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 2022_10_26_011901) do
     t.string "feature"
     t.date "storage_period"
     t.integer "category"
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.string "name"
+    t.integer "matter"
+    t.string "detail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lends", force: :cascade do |t|
+    t.string "name"
+    t.integer "loaned_out"
+    t.date "loaned_date"
+    t.date "return_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
