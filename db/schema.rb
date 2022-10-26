@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2022_10_26_011917) do
 
+  create_table "lost_items", force: :cascade do |t|
+    t.string "item_name"
+    t.date "date_picked"
+    t.string "where_picked"
+    t.string "feature"
+    t.date "storage_period"
+    t.integer "category"
+  end
+
   create_table "inquiries", force: :cascade do |t|
     t.string "name"
     t.integer "matter"

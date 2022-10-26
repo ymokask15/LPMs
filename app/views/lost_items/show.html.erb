@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>落とし物名</strong>
+  <%= @lost_item.item_name %>
+</p>
+
+<p>
+  <strong>拾った日付</strong>
+  <%= @lost_item.date_picked %>
+</p>
+
+<p>
+  <strong>拾った場所</strong>
+  <%= @lost_item.where_picked %>
+</p>
+
+<p>
+  <strong>特徴</strong>
+  <%= @lost_item.feature %>
+</p>
+
+<p>
+  <strong>保管期間</strong>
+  <%= @lost_item.storage_period %>
+</p>
+
+<p>
+  <strong>カテゴリー</strong>
+  <%= @lost_item.category %>
+</p>
+
+<%= link_to '編集', edit_lost_item_path(@lost_item) %> |
+<%= link_to '戻る', lost_items_path %>

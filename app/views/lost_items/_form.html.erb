@@ -1,0 +1,47 @@
+<%= form_with(model: lost_item) do |form| %>
+  <% if lost_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lost_item.errors.count, "error") %> prohibited this lost_item from being saved:</h2>
+
+      <ul>
+        <% lost_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "落とし物名" %>
+    <%= form.text_field :item_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "拾った日付" %>
+    <%= form.date_select :date_picked %>
+  </div>
+
+  <div class="field">
+    <%= form.label "拾った場所" %>
+    <%= form.text_field :where_picked %>
+  </div>
+
+  <div class="field">
+    <%= form.label "特徴" %>
+    <%= form.text_field :feature %>
+  </div>
+
+  <div class="field">
+    <%= form.label "保管期間" %>
+    <%= form.date_select :storage_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label "カテゴリー" %>
+    <%= form.number_field :category %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "登録" %>
+  </div>
+<% end %>
