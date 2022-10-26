@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_name: MyString
+  date_picked: 2022-10-26
+  where_picked: MyString
+  feature: MyString
+  storage_period: 2022-10-26
+  category: 1
+
+two:
+  item_name: MyString
+  date_picked: 2022-10-26
+  where_picked: MyString
+  feature: MyString
+  storage_period: 2022-10-26
+  category: 1
