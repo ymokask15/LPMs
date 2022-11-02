@@ -27,7 +27,13 @@
 
 <p>
   <strong>カテゴリー</strong>
-  <%= @lost_item.category %>
+  <% case @lost_item.category 
+           when 0 %>スマホ
+        <% when 1 %>財布
+        <% when 2 %>キーホルダー
+        <% when 3 %>ハンカチ・タオル
+        <% when 4 %>文房具
+  <% end %>
 </p>
 
 <%= link_to '編集', edit_lost_item_path(@lost_item) %> |
