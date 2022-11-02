@@ -11,34 +11,41 @@
     </div>
   <% end %>
 
+  <%# <form action="#" method="post">
+    <dl>
+        <dt>拾った日付</dt>
+        <dd><input type="date"></dd>
+    </dl> %>
+  <%# </form> %>
   <div class="field">
-    <%= form.label "落とし物名" %>
+    <% form.label "落とし物名" %>落とし物名:
     <%= form.text_field :item_name %>
   </div>
 
   <div class="field">
-    <%= form.label "拾った日付" %>
+    <% form.label "拾った日付" %>拾った日付：
     <%= form.date_select :date_picked %>
   </div>
+  
 
   <div class="field">
-    <%= form.label "拾った場所" %>
+    <% form.label "拾った場所" %>拾った場所：
     <%= form.text_field :where_picked %>
   </div>
 
   <div class="field">
     <%= form.label "特徴" %>
-    <%= form.text_field :feature %>
+    <%= form.text_area :feature,  size: "40x10" %>
   </div>
 
   <div class="field">
-    <%= form.label "保管期間" %>
+    <% form.label "保管期間" %>保管期間：
     <%= form.date_select :storage_period %>
   </div>
 
   <div class="field">
-    <%= form.label "カテゴリー" %>
-    <%= form.number_field :category %>
+    <% form.label "カテゴリー" %>カテゴリー：
+    <%= form.select :category, [["スマホ",0],["財布",1],["キーホルダー",2],["ハンカチ・タオル",3],["文房具",4]], include_blank: "選択してください" %>
   </div>
 
   <div class="actions">
