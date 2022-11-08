@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @lend.name %>
 </p>
 
 <p>
-  <strong>Loaned out:</strong>
+  <strong>貸し出し:</strong>
   <%= @lend.loaned_out %>
 </p>
 
 <p>
-  <strong>Loaned date:</strong>
+  <strong>貸出日:</strong>
   <%= @lend.loaned_date %>
 </p>
 
 <p>
-  <strong>Return date:</strong>
+  <strong>返却日:</strong>
   <%= @lend.return_date %>
 </p>
 
-<%= link_to 'Edit', edit_lend_path(@lend) %> |
-<%= link_to 'Back', lends_path %>
+<%= link_to '編集', edit_lend_path(@lend) %> |
+<%= link_to '戻る', lends_path %>
