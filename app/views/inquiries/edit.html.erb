@@ -1,6 +1,11 @@
-<h1>お問い合わせ追加</h1>
+<div style="text-align:right">
+  <%= link_to '戻る', inquiries_path %>
+</div>
+
+<div style="text-align:center">
+  <h1>お問い合わせ変更</h1>
+</div>
 
 <%= render 'form', inquiry: @inquiry %>
 
-<%= link_to '詳細', @inquiry %> |
-<%= link_to '戻る', inquiries_path %>
+

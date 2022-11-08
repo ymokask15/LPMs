@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_10_26_011917) do
 
-  create_table "lost_items", force: :cascade do |t|
-    t.string "item_name"
-    t.date "date_picked"
-    t.string "where_picked"
-    t.string "feature"
-    t.date "storage_period"
-    t.integer "category"
-  end
-
   create_table "inquiries", force: :cascade do |t|
     t.string "name"
     t.integer "matter"
@@ -34,6 +25,17 @@ ActiveRecord::Schema.define(version: 2022_10_26_011917) do
     t.integer "loaned_out"
     t.date "loaned_date"
     t.date "return_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lost_items", force: :cascade do |t|
+    t.string "item_name"
+    t.date "date_picked"
+    t.string "where_picked"
+    t.string "feature"
+    t.date "storage_period"
+    t.integer "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

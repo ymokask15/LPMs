@@ -25,7 +25,7 @@ class InquiriesController < ApplicationController
 
     respond_to do |format|
       if @inquiry.save
-        format.html { redirect_to inquiry_url(@inquiry), notice: "お問い合せが完了" }
+        format.html { redirect_to completion_inquiries_path, notice: "お問い合せの登録が完了しました。" }
         format.json { render :show, status: :created, location: @inquiry }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class InquiriesController < ApplicationController
   def update
     respond_to do |format|
       if @inquiry.update(inquiry_params)
-        format.html { redirect_to inquiry_url(@inquiry), notice: "Inquiry was successfully updated." }
+        format.html { redirect_to completion_inquiries_path, notice: "お問い合わせの変更が完了しました。" }
         format.json { render :show, status: :ok, location: @inquiry }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,9 +52,12 @@ class InquiriesController < ApplicationController
     @inquiry.destroy
 
     respond_to do |format|
-      format.html { redirect_to inquiries_url, notice: "Inquiry was successfully destroyed." }
+      format.html { redirect_to inquiries_url, notice: "削除しました" }
       format.json { head :no_content }
     end
+  end
+
+  def completion
   end
 
   private
