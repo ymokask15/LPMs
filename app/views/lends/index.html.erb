@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>貸し出し</h1>
+<h1>貸し出し一覧</h1>
 
 <table>
   <thead>
     <tr>
       <th>名前</th>
-      <th>貸し出し</th>
-      <th>貸出日</th>
+      <th>貸し出したもの</th>
+      <th>貸し出し日</th>
       <th>返却日</th>
       <th colspan="3"></th>
     </tr>
@@ -17,9 +17,14 @@
     <% @lends.each do |lend| %>
       <tr>
         <td><%= lend.name %></td>
-        <td><%= lend.loaned_out %></td>
-        <td><%= lend.loaned_date %></td>
-        <td><%= lend.return_date %></td>
+        <td><% case lend.loaned_out
+                 when 0 %>ネクタイ
+              <% when 1 %>スカート
+              <% when 2 %>ズボン
+              <% end %>
+        </td>
+        <td><%= lend.loaned_date.strftime("%m月%d日") %></td>
+        <td><%= lend.return_date.strftime("%m月%d日") %></td>
         <td><%= link_to '詳細', lend %></td>
         <td><%= link_to '編集', edit_lend_path(lend) %></td>
         <td><%= link_to '削除', lend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +35,4 @@
 
 <br>
 
-<%= link_to '新規登録', new_lend_path %>
+<%= link_to '登録', new_lend_path %>

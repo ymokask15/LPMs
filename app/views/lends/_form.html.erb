@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "名前" %>
-    <%= form.text_field :name %>
+      <%= form.label "名前:" %>
+      <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label "貸し出し中" %>
-    <%= form.number_field :loaned_out %>
+    <%= form.label "貸し出したもの:" %>
+    <%= form.select :loaned_out,[["ネクタイ",0],["スカート",1],["ズボン",2]],include_blank: "選択してください" %>
   </div>
 
   <div class="field">
-    <%= form.label "貸出日" %>
+    <%= form.label "貸し出し日:" %>
     <%= form.date_select :loaned_date %>
   </div>
 
   <div class="field">
-    <%= form.label "返却日" %>
+    <%= form.label "返却日:" %>
     <%= form.date_select :return_date %>
   </div>
 
