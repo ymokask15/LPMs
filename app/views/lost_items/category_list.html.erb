@@ -1,0 +1,4 @@
+<% @ary = ["スマホ","財布","キーホルダー","ハンカチ・タオル","文房具"]%>
+<% @list.each do |category_name| %>
+<%= link_to @ary[category_name], lost_items_path(category_name: category_name) %><br>
+<% end %>
