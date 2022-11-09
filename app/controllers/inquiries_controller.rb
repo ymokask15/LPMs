@@ -25,7 +25,7 @@ class InquiriesController < ApplicationController
 
     respond_to do |format|
       if @inquiry.save
-        format.html { redirect_to completion_inquiries_path, notice: "お問い合せの登録が完了しました。" }
+        format.html { redirect_to completion_inquiries_path, notice: "" }
         format.json { render :show, status: :created, location: @inquiry }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class InquiriesController < ApplicationController
   def update
     respond_to do |format|
       if @inquiry.update(inquiry_params)
-        format.html { redirect_to completion_inquiries_path, notice: "お問い合わせの変更が完了しました。" }
+        format.html { redirect_to completion_inquiries_path, notice: "" }
         format.json { render :show, status: :ok, location: @inquiry }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,6 +58,15 @@ class InquiriesController < ApplicationController
   end
 
   def completion
+  end
+
+  def search
+    if params[:search][:name].present?
+      @inquiries = Inquiry.where("name like '%" + params[:search][:name] + "%'").order(:created_at => "desc")
+    else
+      @inquiries = Inquiry.all.oreder(:created_at => "desc")
+    end                       ####検索かけてる
+    render :index
   end
 
   private
