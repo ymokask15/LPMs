@@ -7,7 +7,11 @@
 
 <p>
   <strong>用件</strong>
-  <%= @inquiry.matter %>
+  <% case @inquiry.matter
+                 when 0 %>捜索願
+              <% when 1 %>メッセージ
+              <% when 2 %>質問・意見
+              <% end %>
 </p>
 
 <p>
