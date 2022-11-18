@@ -2,18 +2,16 @@ class HomeController < ApplicationController
 
   protect_from_forgery with: :exception
   
-  before_action :basic_authenticate
+  before_action :basic_authenticate, only: %i[ login_complete ]
 
-  private
-
-  def basic_authenticate
-    authenticate_or_request_with_http_basic do |user, pass|
-        user == 'a' && pass == 'a'
-    end
+  def login_complete
   end
 
   def top
   end
+  private
+
+  
   
   # def search
   #   if params[:search.present?

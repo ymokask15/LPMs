@@ -79,6 +79,13 @@ class LostItemsController < ApplicationController
   def keyword
   end
 
+  def count
+    cnt = LostItem.where(category_name).count
+    render text: "#{cnt}"
+  end
+
+ 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lost_item

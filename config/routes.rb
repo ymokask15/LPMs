@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :users
   get 'home/top'
+  get 'home/login_complete', to: 'home#login_complete'
   resources :lost_items do
     collection do
       get 'search'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
       get 'search_list'
       get 'category_list'
       get 'keyword'
+     
     end
   end
   resources :lends

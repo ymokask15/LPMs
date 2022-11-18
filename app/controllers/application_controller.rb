@@ -9,5 +9,13 @@ class ApplicationController < ActionController::Base
          redirect_to login_url
        end
      end
-
+     def basic_authenticate
+      authenticate_or_request_with_http_basic do |user, pass|
+          user == 'a' && pass == 'a'
+          session[:login_states] = 1
+      end
+      logger.debug("============")
+      logger.debug(cookies.inspect)
+      logger.debug("============")
+    end
 end

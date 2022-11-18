@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to root_url
+    session.delete(:login_states) 
+    # cookies = nil うまくいかない
+    redirect_to home_top_path
   end
 end

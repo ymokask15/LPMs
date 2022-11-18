@@ -1,4 +1,12 @@
 <h1>LPMｓ</h1>
 <p>落とし物管理システム</p>
-<%= link_to '落とし物', search_lost_items_path %>
-<%= link_to 'お問い合わせ', inquiries_path %>
+<%= link_to '落とし物', search_lost_items_path, class: 'btn btn-outline-secondary btn-lg btn-block' %>
+<%= link_to 'お問い合わせ', inquiries_path, class: 'btn btn-outline-secondary btn-lg' %>
+<% if session[:login_states].blank? %>
+  <%= link_to '管理者画面へ', home_login_complete_path %>
+<% end %>
+<% if session[:login_states].present? %>
+  <%= link_to '貸し出し', lends_path, class: 'btn btn-outline-secondary btn-lg'  %>
+  <%= link_to 'ログアウト', logout_path, method: :delete %>
+<% end %>
+
