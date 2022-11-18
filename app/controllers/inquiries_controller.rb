@@ -62,10 +62,14 @@ class InquiriesController < ApplicationController
 
   def search
     if params[:search][:name].present?
-      @inquiries = Inquiry.where("name like '%" + params[:search][:name] + "%'").order(:created_at => "desc")
+      @inquiries = Inquiry.where("name like '%" + params[:search][:name] + "%'").order(:created_at => "asc")
     else
-      @inquiries = Inquiry.all.oreder(:created_at => "desc")
-    end                       ####検索かけてる
+      @inquiries = Inquiry.all.order(:created_at => "asc")
+    end
+    if params[:search][:matter].present?
+      @inquiries = @inquiries.where("matter like '%" + params[:search][:matter] + "%'").order(:created_at => "asc")
+    end
+
     render :index
   end
 

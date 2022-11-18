@@ -1,49 +1,53 @@
 <%= form_with(model: inquiry) do |form| %>
 
   <div class="form_box1">
-  
-    <div style="text-align:center">
-      <h3>【以下のフォームよりお気軽にお問い合わせください。確認後、職員を通して連絡することがあります。】</h3>
-    </div>
-  
-    <% if inquiry.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(inquiry.errors.count,"" ) %>つのエラーがあります</h2>
-        <ul>
-          <% inquiry.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+
+    <div class="col-12 bg-light-red p-5">
+    
+      <div style="text-align:center">
+        <h5>【以下のフォームよりお気軽にお問い合わせください。確認後、職員を通して連絡することがあります。】</h5>
       </div>
-    <% end %>
-  
-    <div class="field">
-      <%= form.label "▮ 学籍番号・氏名（必須）" %>
-      <%= form.text_field :name, placeholder: "例：3400出商太郎" %>
-    </div>
-  
-    <div class="field">
-      <%= form.label "▮ 用件（必須）" %>
-     
-      <%= form.radio_button :matter,0%> 捜索願
-      <%= form.label "　　※記入事項：落とし物、特徴、紛失場所、日付" %>
-      
-      <%= form.radio_button :matter,1 %>メッセージ
-      <%= form.label "　　※記入事項：落とし物、取りに行く日付" %>
-      
-      <%= form.radio_button :matter,2 %>質問・意見
-    </div>
-  
-    <div class="field">
-      <%= form.label "▮ 詳細(記入事項がある場合、必ずお書きください)" %>   
-      <%= form.text_area :detail ,  class: 'form-control',size: "80x10"%>
-    </div>
-  
-    <div style="text-align:center">
-      <div class="actions">
-        <%= form.submit "登録" %>
+    
+      <% if inquiry.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(inquiry.errors.count,"" ) %>つのエラーがあります</h2>
+          <ul>
+            <% inquiry.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="inquiries_field">
+        <%= form.label "▮ 学籍番号・氏名（必須）" %>
+        <%= form.text_field :name, placeholder: "例：3400出商太郎" %>
       </div>
+    
+      <div class="inquiries_field">
+        <%= form.label "▮ 用件（必須）" %>
+       
+        <%= form.radio_button :matter,0%> 捜索願
+        <%= form.label "　　※記入事項：落とし物、特徴、紛失場所、日付" %>
+        
+        <%= form.radio_button :matter,1 %>メッセージ
+        <%= form.label "　　※記入事項：落とし物、取りに行く日付" %>
+        
+        <%= form.radio_button :matter,2 %>質問・意見
+      </div>
+    
+      <div class="inquiries_field">
+        <%= form.label "▮ 詳細(記入事項がある場合、必ずお書きください)" %>   
+        <%= form.text_area :detail ,  class: 'form-control',size: "80x10"%>
+      </div>
+    
+      <div style="text-align:center">
+        <div class="actions">
+          <%= form.submit "送信" %>
+        </div>
+      </div>
+    
     </div>
-  
+
   </div>
 <% end %>
