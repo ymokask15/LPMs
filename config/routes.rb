@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     end
   end
 
+  post'/inquiries_search',to:'inquiries#search'
+  post'/',to:'inquiries#search'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
 end

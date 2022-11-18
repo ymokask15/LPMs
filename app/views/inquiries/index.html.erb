@@ -2,6 +2,14 @@
 
 <h1>お問い合わせ</h1>
 
+<%= form_tag('/inquiries_search') do %>
+  <p>
+  検索
+  <br>
+  <%= text_field_tag 'search[name]'%><%= submit_tag'検索'%>
+  </p>
+<%end%>
+
 <table>
   <thead>
     <tr>
