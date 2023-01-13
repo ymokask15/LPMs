@@ -76,8 +76,6 @@ class LostItemsController < ApplicationController
     @list = LostItem.all.pluck(:category).uniq.sort
   end
 
-  def keyword
-  end
 
   def count
     cnt = LostItem.where(category_name).count
