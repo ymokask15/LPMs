@@ -11,43 +11,53 @@
         </ul>
       </div>
     <% end %>
-    <%# <form action="#" method="post">
-      <dl>
-          <dt>拾った日付</dt>
-          <dd><input type="date"></dd>
-      </dl> %>
-    <%# </form> %>
-    <div class="field">
-      <% form.label "落とし物名" %>落とし物名:
-      <%= form.text_field :item_name %>
-    </div>
 
-    <div class="field">
-      <% form.label "拾った日付" %>拾った日付：
-      <%= form.date_select :date_picked %>
-    </div>
-    
+  <div style="text-align: left">
+    <table align="center"> 
+      <div class="field">
+        <tr>
+          <th><% form.label "落とし物名" %>落 と し 物 名 :</th>
+          <td><%= form.text_field :item_name %></td>
+        </tr>
+      </div>
 
-    <div class="field">
-      <% form.label "拾った場所" %>拾った場所：
-      <%= form.text_field :where_picked %>
-    </div>
+      <div class="field">
+        <tr>
+          <th><% form.label "拾った日付" %>拾 っ た 日 付：</th>
+          <td><%= form.date_select :date_picked %></td>
+        </tr>
+      </div>
+      
 
-    <div class="field">
-      <%= form.label "特徴" %>
-      <%= form.text_area :feature,  size: "40x10" %>
-    </div>
+      <div class="field">
+        <tr>
+          <th><% form.label "拾った場所" %>拾 っ た 場 所：</th>
+          <td><%= form.text_field :where_picked %></td>
+        </tr>
+      </div>
 
-    <div class="field">
-      <% form.label "保管期間" %>保管期間：
-      <%= form.date_select :storage_period, {default: Date.today + 14.day} %>
-    </div>
+      <div class="field">
+        <tr>
+          <th><% form.label "特  徴" %>特徴：</th>
+          <td><%= form.text_area :feature,  size: "40x10" %></td>
+        </tr>
+      </div>
 
-    <div class="field">
-      <% form.label "カテゴリー" %>カテゴリー：
-      <%= form.select :category, [["スマホ",0],["財布",1],["キーホルダー",2],["ハンカチ・タオル",3],["文房具",4]], include_blank: "選択してください" %>
-    </div>
+      <div class="field">
+        <tr>
+          <th><% form.label "保管期間" %>保   管  期  間：</th>
+          <td><%= form.date_select :storage_period, {default: Date.today + 14.day} %></td>
+        </tr>
+      </div>
 
+      <div class="field">
+        <tr>
+          <th><% form.label "カテゴリー" %>カ テ ゴ リ ー：</th>
+          <td><%= form.select :category, [["スマホ",0],["財布",1],["キーホルダー",2],["ハンカチ・タオル",3],["文房具",4]], include_blank: "選択してください" %></td>
+        </tr>
+      </div>
+    </table> 
+  </div>
     <div class="actions">
       <%= form.submit "登録" %>
     </div>
