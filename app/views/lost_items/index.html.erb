@@ -33,8 +33,10 @@
         </td>
         
         <td><%= link_to '詳細', lost_item %></td>
-        <td><%= link_to '編集', edit_lost_item_path(lost_item) %></td>
-        <td><%= link_to '削除', lost_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if session[:login_states].present? %>
+          <td><%= link_to '編集', edit_lost_item_path(lost_item) %></td>
+          <td><%= link_to '削除', lost_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +44,8 @@
 
 <br>
 
-<%= link_to '新規登録', new_lost_item_path %>
+<% if session[:login_states].present? %>
+  <%= link_to '新規登録', new_lost_item_path %>
+  
+<% end %>
+<%= link_to 'トップへ戻る', home_top_path %>

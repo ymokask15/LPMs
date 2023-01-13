@@ -7,7 +7,17 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :users
   get 'home/top'
-  resources :lost_items
+  get 'home/login_complete', to: 'home#login_complete'
+  resources :lost_items do
+    collection do
+      get 'search'
+      post 'search_list'
+      get 'search_list'
+      get 'category_list'
+      get 'keyword'
+     
+    end
+  end
   resources :lends
   resources :inquiries do
     collection do
@@ -15,5 +25,9 @@ Rails.application.routes.draw do
     end
   end
 
+  post'/inquiries_search',to:'inquiries#search'
+  post'/',to:'inquiries#search'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end

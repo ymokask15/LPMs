@@ -1,54 +1,55 @@
-<%= form_with(model: lost_item) do |form| %>
-  <% if lost_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(lost_item.errors.count, "error") %> prohibited this lost_item from being saved:</h2>
+<div style="text-align: center">
+  <%= form_with(model: lost_item) do |form| %>
+    <% if lost_item.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(lost_item.errors.count, "error") %> prohibited this lost_item from being saved:</h2>
 
-      <ul>
-        <% lost_item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% lost_item.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%# <form action="#" method="post">
+      <dl>
+          <dt>拾った日付</dt>
+          <dd><input type="date"></dd>
+      </dl> %>
+    <%# </form> %>
+    <div class="field">
+      <% form.label "落とし物名" %>落とし物名:
+      <%= form.text_field :item_name %>
+    </div>
+
+    <div class="field">
+      <% form.label "拾った日付" %>拾った日付：
+      <%= form.date_select :date_picked %>
+    </div>
+    
+
+    <div class="field">
+      <% form.label "拾った場所" %>拾った場所：
+      <%= form.text_field :where_picked %>
+    </div>
+
+    <div class="field">
+      <%= form.label "特徴" %>
+      <%= form.text_area :feature,  size: "40x10" %>
+    </div>
+
+    <div class="field">
+      <% form.label "保管期間" %>保管期間：
+      <%= form.date_select :storage_period, {default: Date.today + 14.day} %>
+    </div>
+
+    <div class="field">
+      <% form.label "カテゴリー" %>カテゴリー：
+      <%= form.select :category, [["スマホ",0],["財布",1],["キーホルダー",2],["ハンカチ・タオル",3],["文房具",4]], include_blank: "選択してください" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "登録" %>
     </div>
   <% end %>
-
-  <%# <form action="#" method="post">
-    <dl>
-        <dt>拾った日付</dt>
-        <dd><input type="date"></dd>
-    </dl> %>
-  <%# </form> %>
-  <div class="field">
-    <% form.label "落とし物名" %>落とし物名:
-    <%= form.text_field :item_name %>
-  </div>
-
-  <div class="field">
-    <% form.label "拾った日付" %>拾った日付：
-    <%= form.date_select :date_picked %>
-  </div>
-  
-
-  <div class="field">
-    <% form.label "拾った場所" %>拾った場所：
-    <%= form.text_field :where_picked %>
-  </div>
-
-  <div class="field">
-    <%= form.label "特徴" %>
-    <%= form.text_area :feature,  size: "40x10" %>
-  </div>
-
-  <div class="field">
-    <% form.label "保管期間" %>保管期間：
-    <%= form.date_select :storage_period %>
-  </div>
-
-  <div class="field">
-    <% form.label "カテゴリー" %>カテゴリー：
-    <%= form.select :category, [["スマホ",0],["財布",1],["キーホルダー",2],["ハンカチ・タオル",3],["文房具",4]], include_blank: "選択してください" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
+</div>

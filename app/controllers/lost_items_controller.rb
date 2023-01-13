@@ -3,7 +3,11 @@ class LostItemsController < ApplicationController
 
   # GET /lost_items or /lost_items.json
   def index
-    @lost_items = LostItem.all
+    if params[:category_name].present?
+      @lost_items = LostItem.where(category: params[:category_name])
+    else
+      @lost_items = LostItem.all
+    end
   end
 
   # GET /lost_items/1 or /lost_items/1.json
@@ -56,6 +60,31 @@ class LostItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+  end
+
+  def search_list
+    if params[:search][:keyword].present?
+      @lost_items = LostItem.where("item_name like '%" + params[:search][:keyword] + "%'").order(:date_picked => "desc")
+    else
+      @lost_items = LostItem.where(id: 0)
+    end
+  end
+
+  def category_list
+    @list = LostItem.all.pluck(:category).uniq.sort
+  end
+
+  def keyword
+  end
+
+  def count
+    cnt = LostItem.where(category_name).count
+    render text: "#{cnt}"
+  end
+
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.
