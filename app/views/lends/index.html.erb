@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>貸し出し一覧</h1>
+  <h4>
+    <strong>LPMs</strong>
+  </h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>名前</th>
-      <th>貸し出したもの</th>
-      <th>貸し出し日</th>
-      <th>返却日</th>
+<h1 class="text-sm-center">貸し出し一覧</h1>
+
+<%= form_tag(lends_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
+
+<h5 class="text-end"><%= link_to '貸し出し一覧に戻る', lends_path %></h5>
+
+<table  class="table table-bordered" _msthidden="14">
+  <thead  _msthidden="3">
+    <tr  _msthidden="3" class="text-sm-center"> 
+      <th scope="col">名前</th>
+      <th scope="col" _msthash="2319434" _msttexthash="62166" _msthidden="1">貸し出したもの</th>
+      <th scope="col" _msthash="2319564" _msttexthash="45539" _msthidden="1">貸し出し日</th>
+      <th scope="col" _msthash="2319694" _msttexthash="73710" _msthidden="1">返却日</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="text-sm-center">
     <% @lends.each do |lend| %>
       <tr>
         <td><%= lend.name %></td>
@@ -25,7 +36,6 @@
         </td>
         <td><%= lend.loaned_date.strftime("%m月%d日") %></td>
         <td><%= lend.return_date.strftime("%m月%d日") %></td>
-        <td><%= link_to '詳細', lend %></td>
         <td><%= link_to '編集', edit_lend_path(lend) %></td>
         <td><%= link_to '削除', lend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -35,4 +45,4 @@
 
 <br>
 
-<%= link_to '登録', new_lend_path %>
+<h2 class="text-sm-center"><%= link_to '登録', new_lend_path %></h2>

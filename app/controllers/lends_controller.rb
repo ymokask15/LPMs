@@ -3,7 +3,11 @@ class LendsController < ApplicationController
 
   # GET /lends or /lends.json
   def index
-    @lends = Lend.all
+    if params[:search].present?
+      @lends = Lend.where("name like '%" + params[:search]+"%'")
+    else
+      @lends = Lend.all
+    end
   end
 
   # GET /lends/1 or /lends/1.json
@@ -56,6 +60,7 @@ class LendsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

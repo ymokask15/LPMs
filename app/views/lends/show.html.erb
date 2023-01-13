@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h4>
   <strong>LPMs</strong>
-</p>
+</h4>
 
-<p>
-  <strong>名前:</strong>
+<h6 class="text-end"><%= link_to 'トップへ戻る', lends_path %></h6>
+
+<h4 style="text-align:center">
+  <strong>名前</strong>
   <%= @lend.name %>
-</p>
+</h4>
 
-<p>
-  <strong>貸し出し:</strong>
+<h4 style="text-align:center">
+  <strong>貸し出した物</strong>
   <% case @lend.loaned_out
                  when 0 %>ネクタイ
               <% when 1 %>スカート
               <% when 2 %>ズボン
               <% end %>
-</p>
+</h4>
 
-<p>
-  <strong>登録完了</strong>
-</p>
+<h2 style="text-align:center">
+  <strong >登録完了</strong>
+</h2>
 
-<%= link_to 'トップへ戻る', lends_path %>
-<%= link_to '追加で登録', new_lend_path %>
+
+<h3 class="text-center"><%= link_to '追加で登録', new_lend_path %></h3>

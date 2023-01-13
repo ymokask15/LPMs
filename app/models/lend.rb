@@ -17,4 +17,12 @@ class Lend < ApplicationRecord
     
   end 
 
+  def self.search(search)
+    if search
+      Lend.where(['content LIKE ?', "%#{search}%"])
+    else
+      Lend.all
+    end
+  end
+
 end

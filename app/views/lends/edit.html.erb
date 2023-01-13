@@ -1,6 +1,8 @@
-<h1>貸し出しの編集</h1>
+<h1 style="text-align:center">貸し出しの編集</h1>
 
 <%= render 'form', lend: @lend %>
 
-<%= link_to '詳細', @lend %> |
-<%= link_to '戻る', lends_path %>
+<h6 class="text-end">
+  <%= link_to '詳細', @lend %> |
+  <%= link_to '戻る', lends_path %>
+</h6>

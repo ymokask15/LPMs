@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="text-sm-center">
+
+    <div class="d-flex justify-content-center">
       <%= form.label "名前:" %>
       <%= form.text_field :name %>
-  </div>
+    </div>
 
-  <div class="field">
-    <%= form.label "貸し出したもの:" %>
-    <%= form.select :loaned_out,[["ネクタイ",0],["スカート",1],["ズボン",2]],include_blank: "選択してください" %>
-  </div>
+    <div class="d-flex justify-content-center">
+      <%= form.label "貸し出した物:" %>
+      <%= form.select :loaned_out,[["ネクタイ",0],["スカート",1],["ズボン",2]],include_blank: "選択してください" %>
+    </div>
 
-  <div class="field">
-    <%= form.label "貸し出し日:" %>
-    <%= form.date_select :loaned_date %>
-  </div>
+    <div class="d-flex justify-content-center">
+      <%= form.label "貸し出し日:" %>
+      <%= form.date_select :loaned_date %>
+    </div>
 
-  <div class="field">
-    <%= form.label "返却日:" %>
-    <%= form.date_select :return_date %>
-  </div>
+    <div class="d-flex justify-content-center">
+      <%= form.label "返却日:" %>
+      <%= form.date_select :return_date %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "登録" %>
-  </div>
+    <div class="actions">
+      <%= form.submit "登録" %>
+    </div>
+  </div>  
 <% end %>
