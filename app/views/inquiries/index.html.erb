@@ -13,11 +13,11 @@
   <%= radio_button_tag("search[matter]","0")%>捜索願
   <%= radio_button_tag("search[matter]","1")%>メッセージ
   <%= radio_button_tag("search[matter]","2")%>質問・意見
-  <%= submit_tag'検索'%>
+  <button class="btn btn-outline-success" type="submit">検索</button>
   </p>
 <% end %>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>学籍番号・氏名</th>
@@ -39,7 +39,6 @@
         </td>
         <td><%= inquiry.detail.truncate(15, omission: '...') %></td>
         <td><%= link_to '詳細', inquiry %></td>
-        <td><%= link_to '編集', edit_inquiry_path(inquiry) %></td>
         <td><%= link_to '削除', inquiry, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>

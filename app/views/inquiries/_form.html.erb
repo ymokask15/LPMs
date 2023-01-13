@@ -23,18 +23,22 @@
         <%= form.label "▮ 学籍番号・氏名（必須）" %>
         <%= form.text_field :name, placeholder: "例：3400出商太郎" %>
       </div>
+
+      <p></p>
     
       <div class="inquiries_field">
         <%= form.label "▮ 用件（必須）" %>
        
         <%= form.radio_button :matter,0%> 捜索願
-        <%= form.label "　　※記入事項：落とし物、特徴、紛失場所、日付" %>
+        <%= form.label "　※記入事項：落とし物、特徴、紛失場所、日付" %>
         
         <%= form.radio_button :matter,1 %>メッセージ
-        <%= form.label "　　※記入事項：落とし物、取りに行く日付" %>
+        <%= form.label "　※記入事項：落とし物、取りに行く日付" %>
         
         <%= form.radio_button :matter,2 %>質問・意見
       </div>
+
+      <p></p>
     
       <div class="inquiries_field">
         <%= form.label "▮ 詳細(記入事項がある場合、必ずお書きください)" %>   
