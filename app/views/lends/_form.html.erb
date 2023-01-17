@@ -11,30 +11,38 @@
     </div>
   <% end %>
 
-  <div class="text-sm-center">
+ <div style="text-align: left">
+    <table align="center"> 
+      <div class="field">
+        <tr>
+          <th><%= form.label "名前:" %></th>
+          <td><%= form.text_field :name %></td>
+        </tr>
+      </div>
 
-    <div class="d-flex justify-content-center">
-      <%= form.label "名前:" %>
-      <%= form.text_field :name %>
-    </div>
+      <div class="field">
+        <tr>
+          <th><%= form.label "貸し出した物:" %></th>
+          <td><%= form.select :loaned_out,[["ネクタイ",0],["スカート",1],["ズボン",2]],include_blank: "選択してください" %></td>
+        </tr>
+      </div>
 
-    <div class="d-flex justify-content-center">
-      <%= form.label "貸し出した物:" %>
-      <%= form.select :loaned_out,[["ネクタイ",0],["スカート",1],["ズボン",2]],include_blank: "選択してください" %>
-    </div>
+      <div class="field">
+        <tr>
+          <th><%= form.label "貸し出し日:" %></th>
+          <td><%= form.date_select :loaned_date %></td>
+        </tr>
+      </div>
 
-    <div class="d-flex justify-content-center">
-      <%= form.label "貸し出し日:" %>
-      <%= form.date_select :loaned_date %>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <%= form.label "返却日:" %>
-      <%= form.date_select :return_date %>
-    </div>
-
+      <div class="field">
+        <tr>
+          <th><%= form.label "返却日:" %></th>
+          <td><%= form.date_select :return_date %></td>
+        </tr>
+      </div>
+    </table>
+  </div>
     <div class="actions">
       <%= form.submit "登録" %>
-    </div>
-  </div>  
+    </div> 
 <% end %>
