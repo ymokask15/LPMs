@@ -4,8 +4,13 @@
   <strong>LPMs</strong>
 </h4>
 
-<h6 class="text-end"><%= link_to 'トップへ戻る', lends_path %></h6>
+<div style="text-align:right">
+  <%= link_to 'トップへ戻る', home_top_path %>
+</div>
 
+<div style="text-align:right">
+  <%= link_to '貸し出し一覧表示', lends_path %>
+</div>
 <h4 style="text-align:center">
   <strong>名前</strong>
   <%= @lend.name %>
@@ -20,9 +25,13 @@
               <% end %>
 </h4>
 
+<p></p>
 <h2 style="text-align:center">
   <strong >登録完了</strong>
 </h2>
 
 
-<h3 class="text-center"><%= link_to '追加で登録', new_lend_path %></h3>
+
+<div style="text-align:center">
+  <%= link_to '追加で登録', new_lend_path,class: 'btn btn-outline-secondary btn-lg' %>
+</div>

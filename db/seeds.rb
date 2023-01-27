@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Lend.create(name: "わかやま" ,loaned_out:0 ,loaned_date: "2023-01-20", return_date: "2023-01-26")
+Lend.create(name: "やまさき" ,loaned_out:2 ,loaned_date: "2023-01-21", return_date: "2023-01-27")
