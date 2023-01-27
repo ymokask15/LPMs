@@ -8,3 +8,6 @@
 
 Lend.create(name: "わかやま" ,loaned_out:0 ,loaned_date: "2023-01-20", return_date: "2023-01-26")
 Lend.create(name: "やまさき" ,loaned_out:2 ,loaned_date: "2023-01-21", return_date: "2023-01-27")
+
+Inquiry.create(name: "わかやま",matter:0,detail: "スマホを落としました")
+Inquiry.create(name: "やまさき",matter:2,detail: "落し物はどこに取りに行けばいいのか")
