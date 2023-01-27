@@ -4,6 +4,10 @@
     <strong>LPMs</strong>
   </h4>
 
+<div style="text-align:right">
+  <%= link_to 'トップへ戻る', home_top_path %>
+</div>
+
 <h1 class="text-sm-center">貸し出し一覧</h1>
 
 <%= form_tag(lends_path,:method => 'get') do %>
@@ -11,7 +15,7 @@
   <%= submit_tag '検索', :name => nil %>
 <% end %>
 
-<h5 class="text-end"><%= link_to '貸し出し一覧に戻る', lends_path %></h5>
+<h5 class="text-end"><%= link_to '貸し出し一覧表示', lends_path %></h5>
 
 <table  class="table table-hover" _msthidden="14">
   <thead  _msthidden="3">
@@ -45,4 +49,4 @@
 
 <br>
 
-<p class="text-sm-center"><%= link_to '登録', new_lend_path %></p>
+<p class="text-sm-center"><%= link_to '登録', new_lend_path, class: 'btn btn-outline-secondary btn-lg my-2 mx-5 '%></p>
