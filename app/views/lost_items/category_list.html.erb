@@ -1,4 +1,22 @@
-<% @ary = ["スマホ","財布","キーホルダー","ハンカチ・タオル","文房具"]%>
-<% @list.each do |category_name| %>
-<%= link_to @ary[category_name], lost_items_path(category_name: category_name), class: 'btn btn-outline-dark rounded-0 btn-lg btn-block px-5 pe-auto' %><br>
-<% end %>
+<h4>
+    <strong>LPMs</strong>
+</h4>
+
+ <h5 class="text-end"><%= link_to 'トップへ戻る', home_top_path %></h5>
+
+<h1 class="text-sm-center">カテゴリー検索</h1>
+
+<h5 class="text-end"><%= link_to '一覧を表示', lost_items_path %></h5>
+
+<br>
+
+<div class="d-flex flex-column ">
+  <% @ary = ["スマホ","財布","キーホルダー","ハンカチ・タオル","文房具"]%>
+  <% @list.each do |category_name| %>
+  <%= link_to @ary[category_name], lost_items_path(category_name: category_name), class: 'btn btn-outline-dark rounded-0 btn-lg btn-block px-5 pe-auto' %><br>
+  <% end %>
+</div>
+
+<div style="text-align:right">
+  <%= link_to '戻る', search_lost_items_path %>
+</div>

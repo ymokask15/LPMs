@@ -37,7 +37,8 @@
 </p>
 
 <% if session[:login_states].blank? %>
-  <%= link_to 'お問い合わせ', new_inquiry_path %>
+  <%= link_to 'お問い合わせ', new_inquiry_path %> |
+  <%= link_to '戻る', :back %>
 <% end %>
 <% if session[:login_states].present? %>
   <%= link_to '編集', edit_lost_item_path(@lost_item) %> |

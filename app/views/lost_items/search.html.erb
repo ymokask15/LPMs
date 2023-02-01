@@ -1,14 +1,44 @@
+<h4>
+    <strong>LPMs</strong>
+</h4> 
+
+<h5 class="text-end"><%= link_to 'トップへ戻る', home_top_path %></h5>
+
+
 <div style="text-align: center">
   <h1>検索画面</h1>
 
-  <%= link_to 'カテゴリー検索', category_list_lost_items_path %>
+  <h5 class="text-end"><%= link_to '一覧を表示', lost_items_path %></h5>
+ 
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <%= form_tag('/lost_items/search_list') do %>
-    <p>
-    キーワード検索
-    <br> 
-    <%= text_field_tag 'search[keyword]' %><%= submit_tag '検索' %>
-    </p>
-  <% end %>
-  <%= link_to '登録', new_lost_item_path %>
+    <tbody>    
+     <tr>
+       <td>
+         <%= link_to 'カテゴリー検索', category_list_lost_items_path ,class: 'btn btn-outline-secondary btn-lg' %>
+       </td>
+       <td>
+         <%= form_tag('/lost_items/search_list') do %>
+           <p>
+             <br> 
+             <%= text_field_tag 'search[keyword]','',{size:"30", placeholder: "キーワードを検索してください"} %><br><%= submit_tag '検索' ,class: 'btn btn-outline-secondary btn-lg'%>
+           </p>
+         <% end %>
+       </td>
+     </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <%= link_to '落とし物の追加',  new_lost_item_path ,class: 'btn btn-outline-secondary btn-lg'%>
 </div>

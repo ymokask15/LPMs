@@ -2,14 +2,20 @@
     <strong>LPMs</strong>
 </h4> 
 
-<div style="text-align:right">
-  <%= link_to 'トップへ戻る', home_top_path %>
-</div>
+<h5 class="text-end"><%= link_to 'トップへ戻る', home_top_path %></h5>
 
 <h1 class="text-sm-center">検索結果</h1>
+<h5 class="text-end"><%= link_to '一覧を表示', lost_items_path %></h5>
 <% if @lost_items.count == 0 %>
-<h2>0件です</h2>
-<%= link_to '登録', new_lost_item_path %>
+  <h2>0件です</h2>
+  
+  <div style="text-align:center">
+    <%= link_to '登録',  new_lost_item_path ,class: 'btn btn-outline-secondary btn-lg'%>
+  </div>
+  
+  <div style="text-align:right">
+    <%= link_to "戻る", :back %>
+  </div>
 <% else %>
     <table class="table table-hover">
     <thead>
@@ -50,6 +56,14 @@
         <% end %>
     </tbody>
     </table>
+
+    <div style="text-align:center">
+      <%= link_to '登録',  new_lost_item_path ,class: 'btn btn-outline-secondary btn-lg'%>
+    </div>
+
+    <div style="text-align:right">
+      <%= link_to '戻る', search_lost_items_path %>
+    </div>
 <% end %>
 
 <br>

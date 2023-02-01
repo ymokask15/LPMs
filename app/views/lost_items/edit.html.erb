@@ -1,8 +1,10 @@
+<h5 class="text-end"><%= link_to 'トップへ戻る', home_top_path %></h5>
+
 <div style="text-align: center">
 <h1>編集</h1>
 
 <%= render 'form', lost_item: @lost_item %>
 
 <%= link_to '詳細', @lost_item %> |
-<%= link_to '戻る', lost_items_path %>
+<%= link_to "戻る", :back %>
 </div>

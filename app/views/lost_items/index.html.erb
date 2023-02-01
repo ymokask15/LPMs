@@ -4,9 +4,7 @@
     <strong>LPMs</strong>
 </h4>
 
-<div style="text-align:right">
-  <%= link_to 'トップへ戻る', home_top_path %>
-</div>
+<h5 class="text-end"><%= link_to 'トップへ戻る', home_top_path %></h5>
 
 <h1 class="text-sm-center">落とし物</h1>
 
@@ -53,6 +51,13 @@
 <br>
 
 <% if session[:login_states].present? %>
-  <%= link_to '新規登録', new_lost_item_path %>
+
+  <div style="text-align:center">
+    <%= link_to '登録',  new_lost_item_path ,class: 'btn btn-outline-secondary btn-lg'%>
+  </div>
+  
+  <div style="text-align:right">
+    <%= link_to '戻る', category_list_lost_items_path %>
+  </div>
   
 <% end %>
