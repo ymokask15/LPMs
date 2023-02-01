@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>お問い合わせ一覧</h1>
+<h4>
+  <strong>LPMs</strong>
+</h4>
+
+
+<h5 class="text-end"><%= link_to 'トップへ戻る', home_top_path %></h5>
+
+
+<h1 class="text-sm-center">お問い合わせ一覧</h1>
 
 <%= form_tag('/inquiries_search') do %>
   <p>
@@ -13,7 +21,7 @@
   <%= radio_button_tag("search[matter]","0")%>捜索願
   <%= radio_button_tag("search[matter]","1")%>メッセージ
   <%= radio_button_tag("search[matter]","2")%>質問・意見
-  <button class="btn btn-outline-success" type="submit">検索</button>
+  <%= submit_tag '検索' %>
   </p>
 <% end %>
 
@@ -37,7 +45,7 @@
               <% when 2 %>質問・意見
               <% end %>
         </td>
-        <td><%= inquiry.detail.truncate(15, omission: '...') %></td>
+        <td><%= inquiry.detail.truncate(20, omission: '...') %></td>
         <td><%= link_to '詳細', inquiry %></td>
         <td><%= link_to '削除', inquiry, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
@@ -47,4 +55,4 @@
 
 <br>
 
-<%= link_to '新規登録', new_inquiry_path %>
+

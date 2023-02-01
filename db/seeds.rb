@@ -24,3 +24,6 @@ LostItem.create(item_name: "ハンカチ・タオル" ,date_picked: "2023-10-30"
 LostItem.create(item_name: "文房具" ,date_picked: "2023-10-28", where_picked: "学校", feature: "赤ペン", storage_period: "2023-10-31", category: 4)
 LostItem.create(item_name: "文房具" ,date_picked: "2023-10-29", where_picked: "学校", feature: "シャーペン", storage_period: "2023-11-01", category: 4)
 LostItem.create(item_name: "文房具" ,date_picked: "2023-10-30", where_picked: "学校", feature: "物差し", storage_period: "2023-11-02", category: 4)
+
+Inquiry.create(name: "わかやま",matter:0,detail: "スマホを落としました")
+Inquiry.create(name: "やまさき",matter:2,detail: "落し物はどこに取りに行けばいいのか")
